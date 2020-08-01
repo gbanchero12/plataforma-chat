@@ -27,15 +27,16 @@ namespace WebApplication1.Controllers
 
             try
             {
-                Dialogo dialogo = db.Dialogos.Where(d => d.Cliente.ID == mensaje.Cliente.ID).SingleOrDefault();
+                Dialogo dialogo = db.Dialogos.Where(d => d.Cliente.ID == mensaje.Cliente.ID && d.Resuelta == false).First();
                
 
                 if (dialogo != null) // dialogo existente
                 {
                     mensaje.FechaCreacion = DateTime.Now;
-                    db.Mensajes.Add(mensaje);
-                    db.Entry(mensaje.Cliente).State = EntityState.Unchanged;
+                    mensaje.Usuario = dialogo.Usuario;
+                    db.Entry(dialogo.Cliente).State = EntityState.Unchanged;
                     db.Entry(mensaje.Usuario).State = EntityState.Unchanged;
+                    db.Mensajes.Add(mensaje);
                     db.SaveChanges();
                     int idMensaje = mensaje.ID;
 

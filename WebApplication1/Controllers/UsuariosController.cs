@@ -43,12 +43,12 @@ namespace WebApplication1.Controllers
             try
             {
 
-                usuario = db.Usuarios.Where(usu => usu.Nombre == nombre).SingleOrDefault();
+                usuario = db.Usuarios.Where(usu => usu.Nombre == nombre).First();
 
                 //decrypt
                 if (!password.Equals(usuario.Password))
                 {
-                    return Ok("Contrasena incorrecta");
+                    return Unauthorized();
                 }
             }
             catch (Exception e)

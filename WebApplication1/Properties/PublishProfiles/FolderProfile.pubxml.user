@@ -29,10 +29,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/24/2019 22:19:48</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>10/09/2013 16:29:20</publishTime>
+      <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.pdb">
-      <publishTime>10/09/2013 16:29:20</publishTime>
+      <publishTime>09/10/2013 16:29:20</publishTime>
+    </File>
+    <File Include="bin/cs/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:08:58</publishTime>
+    </File>
+    <File Include="bin/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/cs/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:08:58</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="bin/Domain.dll">
       <publishTime>07/30/2020 12:44:35</publishTime>
@@ -45,6 +69,66 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>04/16/2020 20:38:56</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNetCore.Authentication.Abstractions.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
@@ -70,6 +154,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
     </File>
+    <File Include="bin/Microsoft.AspNetCore.Html.Abstractions.dll">
+      <publishTime>11/12/2018 17:28:42</publishTime>
+    </File>
     <File Include="bin/Microsoft.AspNetCore.Http.Abstractions.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
     </File>
@@ -84,6 +171,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Microsoft.AspNetCore.HttpOverrides.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Razor.dll">
+      <publishTime>11/12/2018 17:29:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Razor.Language.dll">
+      <publishTime>11/16/2019 06:08:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Razor.Runtime.dll">
+      <publishTime>11/12/2018 17:29:32</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNetCore.Routing.Abstractions.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
@@ -111,6 +207,36 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Microsoft.AspNetCore.WebUtilities.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>11/15/2019 08:38:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>09/12/2019 17:08:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.pdb">
+      <publishTime>09/12/2019 17:08:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.Workspaces.pdb">
+      <publishTime>09/12/2019 17:09:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.dll">
+      <publishTime>09/12/2019 17:07:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.pdb">
+      <publishTime>09/12/2019 17:07:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.Razor.dll">
+      <publishTime>11/16/2019 06:08:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>09/12/2019 17:08:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.Workspaces.pdb">
+      <publishTime>09/12/2019 17:08:10</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -140,10 +266,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/25/2017 00:48:04</publishTime>
     </File>
     <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
-      <publishTime>05/16/2018 20:18:12</publishTime>
+      <publishTime>01/01/1980 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Extensions.DependencyInjection.dll">
-      <publishTime>07/25/2017 00:48:04</publishTime>
+      <publishTime>01/01/1980 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Extensions.FileProviders.Abstractions.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
@@ -187,6 +313,24 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/Microsoft.Net.Http.Headers.dll">
       <publishTime>07/25/2017 00:48:04</publishTime>
     </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>05/12/2020 19:55:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>05/12/2020 19:55:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>05/12/2020 19:55:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>05/12/2020 19:55:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>05/12/2020 19:55:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>05/12/2020 19:55:38</publishTime>
+    </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
@@ -197,13 +341,40 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>02/18/2018 09:44:54</publishTime>
+      <publishTime>03/24/2018 17:44:14</publishTime>
+    </File>
+    <File Include="bin/NuGet.Frameworks.dll">
+      <publishTime>04/24/2018 21:27:12</publishTime>
+    </File>
+    <File Include="bin/pl/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:12</publishTime>
+    </File>
+    <File Include="bin/pl/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="bin/Plataforma-Chat.dll">
-      <publishTime>07/31/2020 19:57:11</publishTime>
+      <publishTime>07/31/2020 21:49:42</publishTime>
     </File>
     <File Include="bin/Plataforma-Chat.pdb">
-      <publishTime>07/31/2020 19:57:11</publishTime>
+      <publishTime>07/31/2020 21:49:42</publishTime>
+    </File>
+    <File Include="bin/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:14</publishTime>
+    </File>
+    <File Include="bin/pt-BR/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -343,6 +514,18 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
+    <File Include="bin/ru/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:14</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
     <File Include="bin/System.AppContext.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
@@ -356,7 +539,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Collections.Immutable.dll">
-      <publishTime>07/19/2017 10:01:28</publishTime>
+      <publishTime>05/15/2018 13:29:34</publishTime>
     </File>
     <File Include="bin/System.Collections.NonGeneric.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -378,6 +561,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/System.ComponentModel.TypeConverter.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
+    </File>
+    <File Include="bin/System.Composition.AttributedModel.dll">
+      <publishTime>11/05/2016 04:55:42</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Convention.dll">
+      <publishTime>11/05/2016 04:55:42</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Hosting.dll">
+      <publishTime>11/05/2016 04:55:42</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Runtime.dll">
+      <publishTime>11/05/2016 04:55:44</publishTime>
+    </File>
+    <File Include="bin/System.Composition.TypedParts.dll">
+      <publishTime>11/05/2016 04:55:46</publishTime>
     </File>
     <File Include="bin/System.Console.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -476,13 +674,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Memory.dll">
-      <publishTime>05/15/2018 13:29:54</publishTime>
+      <publishTime>04/17/2019 16:24:34</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>01/02/2018 12:17:18</publishTime>
+      <publishTime>02/01/2018 12:17:18</publishTime>
     </File>
     <File Include="bin/System.Net.NameResolution.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -527,7 +725,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Reflection.Metadata.dll">
-      <publishTime>07/19/2017 10:01:32</publishTime>
+      <publishTime>05/15/2018 13:29:44</publishTime>
     </File>
     <File Include="bin/System.Reflection.Primitives.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -542,7 +740,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
-      <publishTime>05/15/2018 13:29:42</publishTime>
+      <publishTime>09/18/2018 19:38:10</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.VisualC.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -604,6 +802,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/System.Security.SecureString.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
+    <File Include="bin/System.Text.Encoding.CodePages.dll">
+      <publishTime>11/29/2018 15:39:18</publishTime>
+    </File>
     <File Include="bin/System.Text.Encoding.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
@@ -611,7 +812,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Text.Encodings.Web.dll">
-      <publishTime>07/19/2017 10:01:30</publishTime>
+      <publishTime>05/15/2018 13:29:52</publishTime>
     </File>
     <File Include="bin/System.Text.RegularExpressions.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -626,7 +827,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Threading.Tasks.Extensions.dll">
-      <publishTime>07/19/2017 10:01:30</publishTime>
+      <publishTime>06/18/2019 12:08:48</publishTime>
     </File>
     <File Include="bin/System.Threading.Tasks.Parallel.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -644,31 +845,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>01/02/2018 12:17:40</publishTime>
+      <publishTime>02/01/2018 12:17:40</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>01/02/2018 12:19:26</publishTime>
+      <publishTime>02/01/2018 12:19:26</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/02/2018 12:16:32</publishTime>
+      <publishTime>02/01/2018 12:16:32</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>11/02/2014 15:26:04</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/02/2018 12:16:56</publishTime>
+      <publishTime>02/01/2018 12:16:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Xml.ReaderWriter.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
@@ -688,8 +889,44 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/System.Xml.XPath.XDocument.dll">
       <publishTime>07/28/2020 19:57:38</publishTime>
     </File>
+    <File Include="bin/tr/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:14</publishTime>
+    </File>
+    <File Include="bin/tr/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll">
+      <publishTime>09/12/2019 17:09:00</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:09:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.CodeAnalysis.resources.dll">
+      <publishTime>09/12/2019 17:07:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll">
+      <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>07/24/2020 18:02:37</publishTime>
@@ -787,11 +1024,20 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/Index.cshtml">
       <publishTime>07/24/2020 18:02:35</publishTime>
     </File>
+    <File Include="Views/Login/About.cshtml">
+      <publishTime>07/24/2020 18:02:35</publishTime>
+    </File>
+    <File Include="Views/Login/Contact.cshtml">
+      <publishTime>07/24/2020 18:02:35</publishTime>
+    </File>
+    <File Include="Views/Login/Create.cshtml">
+      <publishTime>07/31/2020 21:21:13</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>07/24/2020 18:02:35</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/24/2020 18:02:35</publishTime>
+      <publishTime>07/31/2020 21:16:11</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>07/24/2020 18:02:35</publishTime>
@@ -800,7 +1046,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/24/2020 18:02:35</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/31/2020 20:07:25</publishTime>
+      <publishTime>07/31/2020 21:49:43</publishTime>
     </File>
   </ItemGroup>
 </Project>
