@@ -30,12 +30,33 @@ namespace WebApplication1.Controllers
                 return InternalServerError(e);
             }
 
-
-
-
-
-
             return Ok(min.UsuarioId);
+        }
+
+        [HttpGet, Route("~/api/usuarios/login-usuario")]
+        public IHttpActionResult LoginUsuario(string nombre, string password)
+        {
+            if (nombre.Equals("") || password.Equals(""))
+                return BadRequest();
+
+            Usuario usuario = null;
+            try
+            {
+
+                usuario = db.Usuarios.Where(usu => usu.Nombre == nombre).SingleOrDefault();
+
+                //decrypt
+                if (!password.Equals(usuario.Password))
+                {
+                    return Ok("Contrasena incorrecta");
+                }
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+
+            return Ok(usuario);
         }
     }
 }

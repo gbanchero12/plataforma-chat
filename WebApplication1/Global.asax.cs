@@ -22,7 +22,7 @@ namespace WebApplication1
 
             using (ChatPlatformContext db = new ChatPlatformContext())
             {
-                db.Database.CreateIfNotExists();
+           
             }
         }
     }
