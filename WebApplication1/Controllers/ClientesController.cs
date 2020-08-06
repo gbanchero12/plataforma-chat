@@ -8,11 +8,17 @@ using System.Web.Http;
 using System.Web;
 using System.Web.Mvc;
 using Domain;
-using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
+using System.Web.Routing;
+using Microsoft.VisualStudio.Services.DelegatedAuthorization;
+using Microsoft.Graph;
+
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using ResponseType = Microsoft.VisualStudio.Services.DelegatedAuthorization.ResponseType;
+using HttpPutAttribute = System.Web.Http.HttpPutAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
 using System.Web.Http.Description;
-using HttpPutAttribute = System.Web.Http.HttpPutAttribute;
-using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
 
 namespace WebApplication1.Controllers
 {
@@ -21,7 +27,7 @@ namespace WebApplication1.Controllers
     {
         private ChatPlatformContext db = new ChatPlatformContext();
 
-        [ResponseType(typeof(Cliente)), HttpPost, Route("~/api/clientes/guardar-cliente")]
+        [System.Web.Http.Description.ResponseType(typeof(Cliente)), System.Web.Http.HttpPost, System.Web.Http.Route("~/api/clientes/guardar-cliente")]
         public IHttpActionResult GuardarCliente(Cliente a_guardar)
         {
             if (a_guardar == null)
@@ -65,7 +71,7 @@ namespace WebApplication1.Controllers
         }
 
         //GET: api/clientes/buscar-por-id
-        [HttpGet, Route("~/api/clientes/buscar-cliente")]
+        [System.Web.Http.HttpGet, System.Web.Http.Route("~/api/clientes/buscar-cliente")]
         public IHttpActionResult BuscarCliente(string id)
         {
             Cliente cliente = new Cliente();
@@ -83,7 +89,7 @@ namespace WebApplication1.Controllers
 
         // PUT: api/Clientes/
 
-        [ResponseType(typeof(Cliente)), HttpPut, Route("~/api/clientes/desactivar-chatbot-cliente")]
+        [System.Web.Http.Description.ResponseType(typeof(Cliente)), HttpPut, Route("~/api/clientes/desactivar-chatbot-cliente")]
         public IHttpActionResult DesactivarChatbotCliente(Cliente a_desactivar)
         {
             if (a_desactivar == null)
@@ -158,6 +164,10 @@ namespace WebApplication1.Controllers
             base.Dispose(disposing);
         }
 
+        public void Execute(RequestContext requestContext)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\workspace\\plataforma-bots\\WebApplication1\\ClassLibrary1\\Domain.csproj": {}
+    "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\workspace\\plataforma-bots\\WebApplication1\\ClassLibrary1\\Domain.csproj": {
+    "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\workspace\\plataforma-bots\\WebApplication1\\ClassLibrary1\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\User\\Desktop\\workspace\\plataforma-bots\\WebApplication1\\ClassLibrary1\\Domain.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\workspace\\plataforma-bots\\WebApplication1\\ClassLibrary1\\obj\\",
+        "projectPath": "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Guillermo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guillermo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,10 +47,6 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
-            },
-            "System.ComponentModel.Annotations": {
-              "target": "Package",
-              "version": "[4.7.0, )"
             }
           },
           "imports": [

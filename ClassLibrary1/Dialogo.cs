@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Threading.Tasks;
+
 namespace Domain
 {
     [Table("Dialogos")]
@@ -17,5 +20,10 @@ namespace Domain
         public virtual List<Mensaje> Mensajes { get; set; }
 
         public bool Resuelta { get; set; }
+
+        public static explicit operator Dialogo(Task<Dialogo> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

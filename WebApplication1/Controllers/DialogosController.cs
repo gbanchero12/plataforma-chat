@@ -7,6 +7,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.Remoting.Messaging;
 using System.Web.Http;
 
 namespace WebApplication1.Controllers
@@ -96,6 +97,23 @@ namespace WebApplication1.Controllers
                     }
                 }
                 throw raise;
+            }
+        }
+
+        [HttpGet, Route("~/api/dialogos/buscar-dialogo")]
+        public IHttpActionResult GetDialogos(string usuario)
+        {
+            if (usuario == null)
+                return BadRequest();
+
+            List<Dialogo> dialogos = null;
+            try {
+               dialogos = db.Dialogos.Where(d => d.Usuario.Nombre == usuario).ToList();
+                return Ok(dialogos);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
             }
         }
         protected override void Dispose(bool disposing)
