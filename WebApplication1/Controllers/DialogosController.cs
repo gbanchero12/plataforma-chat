@@ -28,13 +28,15 @@ namespace WebApplication1.Controllers
 
             try
             {
-                Dialogo dialogo = db.Dialogos.Where(d => d.Cliente.ID == mensaje.Cliente.ID && d.Resuelta == false).First();
-               
+                Dialogo dialogo = db.Dialogos.Where(d => d.Cliente.ID == mensaje.Cliente.ID && d.Resuelta == false).FirstOrDefault();
+
+
 
                 if (dialogo != null) // dialogo existente
                 {
                     mensaje.FechaCreacion = DateTime.Now;
                     mensaje.Usuario = dialogo.Usuario;
+                    mensaje.Cliente = dialogo.Cliente;
                     db.Entry(dialogo.Cliente).State = EntityState.Unchanged;
                     db.Entry(mensaje.Usuario).State = EntityState.Unchanged;
                     db.Mensajes.Add(mensaje);
@@ -101,15 +103,16 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet, Route("~/api/dialogos/buscar-dialogo")]
-        public IHttpActionResult GetDialogos(string usuario)
+        public IHttpActionResult GetDialogos(int idDialogo)
         {
-            if (usuario == null)
+            if (idDialogo == null)
                 return BadRequest();
 
-            List<Dialogo> dialogos = null;
+            Dialogo dialogo = null;
             try {
-               dialogos = db.Dialogos.Where(d => d.Usuario.Nombre == usuario).ToList();
-                return Ok(dialogos);
+
+                dialogo = db.Dialogos.Find(idDialogo);
+                return Ok(dialogo);
             }
             catch (Exception ex)
             {

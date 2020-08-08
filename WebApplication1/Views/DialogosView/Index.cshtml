@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-heading" id="accordion">
-                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <span class="glyphicon glyphicon-comment"></span> Chat 
                     <div class="btn-group pull-right">
                         <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             <span class="glyphicon glyphicon-chevron-down"></span>
@@ -24,50 +24,6 @@
                 <div class="panel-collapse collapse" id="collapseOne">
                     <div class="panel-body">
                         <ul id="chatList" class="chat">
-
-
-
-                            @foreach (Domain.Mensaje msj in @Model.Mensajes)
-                            {
-                                if (msj.OrigenEmisor == Domain.Origen.Cliente)
-                                {
-                                    <li class="left clearfix">
-                                        <span class="chat-img pull-left">
-                                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <strong class="primary-font">@Model.Cliente.ChatId</strong> <small class="pull-right text-muted">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </small>
-                                            </div>
-                                            <p>
-                                               @msj.Texto
-                                            </p>
-                                        </div>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="right clearfix">
-                                        <span class="chat-img pull-right">
-                                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-                                        </span>
-                                        <div class="chat-body clearfix">
-                                            <div class="header">
-                                                <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>
-                                                <strong class="pull-right primary-font">@Model.Usuario.Nombre</strong>
-                                            </div>
-                                            <p>
-                                                @msj.Texto
-                                            </p>
-                                        </div>
-                                    </li>
-                                }
-                            }
-
-
-
                         </ul>
                     </div>
                     <div class="panel-footer">
@@ -80,8 +36,11 @@
                                 <button class="btn btn-success btn-sm" id="btn-chat">
                                     Resolver
                                 </button>
+
                             </span>
+
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -90,31 +49,43 @@
 </div>
 
 <script type="text/javascript">
-    var interval = 10000;
+
+    function renderClient(data) {
+
+
+        console.log(data);
+        var ret = "";
+        for (var i = 0; i < data.Mensajes.length; i++) {
+
+            if (data.Mensajes[i].OrigenEmisor === 0) {
+                ret += '<li class="right clearfix"> <span class="chat-img pull-right"><img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />' +
+                    '</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>' +
+                    +'<strong class="pull-right primary-font"> ' + data.Usuario.Nombre + '</strong> </div> <p>' + data.Mensajes[i].Texto +
+                    +'</p></div></li>';
+            } else {
+                ret += '<li class="right clearfix"> <span class="chat-img pull-right"> <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />' +
+                    '</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>' +
+                    +'<strong class="pull-right primary-font">' + data.Cliente.ChatId +'</strong> </div> <p>' + data.Mensajes[i].Texto +
+                    +'</p></div></li>';
+            }
+
+        }
+        return ret;
+    }
+
+    var interval = 5000;
 
     setInterval(function () { Update() }, interval);
 
     function Update(usuario) {
-        var usuario = '@Model.Usuario.Nombre';
+          var dialogoId = '@Model.ID';
+        //var usuario = 'Model.Usuario.Nombre';
         $.ajax({
-            url: "http://localhost:1177/api/dialogos/buscar-dialogo?usuario=" + usuario,
+            url: "http://localhost:1177/api/dialogos/buscar-dialogo?idDialogo=" + dialogoId,
                     success: function(data) {
                         console.log(data);
-                        $("#chatList").append(
-
-                            '<li class="right clearfix"><span class="chat-img pull-right">  <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />  </span> ' +
-                                   +    ' <div class="chat-body clearfix">'
-                                    +    '    <div class="header">'
-                                     +     '      <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>'
-                                      +      '    <strong class="pull-right primary-font">'+ data[0].Usuario.Nombre+'</strong>'
-                                       +    ' </div>'
-                                        +   ' <p>' +
-                            data[0].Usuario.Nombre +
-                                         + '  </p>'
-                                     + '  </div>'
-                                 + '  </li>'
-
-                        )
+                        $("#chatList").html("");
+                        $("#chatList").html(renderClient(data));
                 },
             error: function (error) {
                 console.log("Error:");

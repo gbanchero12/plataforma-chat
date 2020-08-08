@@ -15,6 +15,7 @@ namespace WebApplication1.Controllers.MVC
         public ActionResult Index()
         {
             //ya sabemos el usuario
+            /*
             Usuario actual = new Usuario();
             actual.Nombre = "Usuario1";
             List<Dialogo> dialogos = null;
@@ -38,11 +39,12 @@ namespace WebApplication1.Controllers.MVC
             else
             {
                 ViewBag.Error = tarea.Result.StatusCode;
-            }
+            }*/
 
 
 
-            Dialogo d = dialogos.First();
+            Dialogo d = new Dialogo();
+            d.ID = 2;
 
             return View(d);
         }
