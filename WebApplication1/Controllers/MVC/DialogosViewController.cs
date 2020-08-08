@@ -6,22 +6,24 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using Obligatorio2___WebApi.Models;
 
 namespace WebApplication1.Controllers.MVC
 {
     public class DialogosViewController : Controller
     {
+        private ChatPlatformContext db = new ChatPlatformContext();
         // GET: DialogosView
         public ActionResult Index()
         {
             //ya sabemos el usuario
-            /*
+            
             Usuario actual = new Usuario();
             actual.Nombre = "Usuario1";
             List<Dialogo> dialogos = null;
 
             HttpClient client = new HttpClient();
-            Uri uri = new Uri("http://localhost:1177/api/dialogos/buscar-dialogo"
+            Uri uri = new Uri("http://localhost:1177/api/dialogos/buscar-dialogo-by-user"
                 + "?" + "usuario=" + actual.Nombre);
             HttpClient cliente = new HttpClient();
 
@@ -39,20 +41,17 @@ namespace WebApplication1.Controllers.MVC
             else
             {
                 ViewBag.Error = tarea.Result.StatusCode;
-            }*/
+            }
 
-
-
-            Dialogo d = new Dialogo();
-            d.ID = 2;
-
-            return View(d);
+            return View(dialogos);
         }
 
         // GET: DialogosView/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Dialogo buscado = db.Dialogos.Find(id);
+            if (buscado == null) { RedirectToAction("Index"); }
+            return View(buscado);
         }
 
         // GET: DialogosView/Create
@@ -119,6 +118,15 @@ namespace WebApplication1.Controllers.MVC
             {
                 return View();
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

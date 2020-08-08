@@ -102,6 +102,25 @@ namespace WebApplication1.Controllers
             }
         }
 
+        [HttpGet, Route("~/api/dialogos/buscar-dialogo-by-user")]
+        public IHttpActionResult GetDialogos(string usuario)
+        {
+            if (usuario == null)
+                return BadRequest();
+
+            List<Dialogo> dialogos = null;
+            try
+            {
+
+                dialogos = db.Dialogos.Where(d => d.Usuario.Nombre == usuario).ToList();
+                return Ok(dialogos);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
         [HttpGet, Route("~/api/dialogos/buscar-dialogo")]
         public IHttpActionResult GetDialogos(int idDialogo)
         {
@@ -109,7 +128,8 @@ namespace WebApplication1.Controllers
                 return BadRequest();
 
             Dialogo dialogo = null;
-            try {
+            try
+            {
 
                 dialogo = db.Dialogos.Find(idDialogo);
                 return Ok(dialogo);
