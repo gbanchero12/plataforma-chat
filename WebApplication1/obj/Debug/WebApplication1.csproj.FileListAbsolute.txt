@@ -739,7 +739,6 @@ C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.Te
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Services.Common.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Services.WebApi.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Newtonsoft.Json.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\System.Buffers.dll
@@ -781,7 +780,6 @@ C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.Te
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Services.Common.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Services.WebApi.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Web.CodeGeneration.xml
-C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\Newtonsoft.Json.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\System.Buffers.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\WebApplication1\bin\System.Diagnostics.DiagnosticSource.xml

@@ -38,3 +38,4 @@ C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Debug\netstand
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Debug\netstandard2.0\Domain.csproj.CopyComplete
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Debug\netstandard2.0\Domain.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Debug\netstandard2.0\Domain.pdb
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache

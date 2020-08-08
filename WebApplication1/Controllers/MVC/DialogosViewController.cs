@@ -7,24 +7,23 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Obligatorio2___WebApi.Models;
+using System.Configuration;
 
 namespace WebApplication1.Controllers.MVC
 {
     public class DialogosViewController : Controller
     {
         private ChatPlatformContext db = new ChatPlatformContext();
+
+        //local || urlApiPlataformaChat
+        private string _url = ConfigurationManager.AppSettings["local"];
         // GET: DialogosView
         public ActionResult Index()
         {
-            //ya sabemos el usuario
-            
-            Usuario actual = new Usuario();
-            actual.Nombre = "Usuario1";
             List<Dialogo> dialogos = null;
-
-            HttpClient client = new HttpClient();
-            Uri uri = new Uri("http://localhost:1177/api/dialogos/buscar-dialogo-by-user"
-                + "?" + "usuario=" + actual.Nombre);
+            _ = new HttpClient();
+            Uri uri = new Uri(_url + "/api/dialogos/buscar-dialogo-by-user"
+                + "?" + "usuario=" + Session["Usuario"].ToString());
             HttpClient cliente = new HttpClient();
 
             Task<HttpResponseMessage> tarea = cliente.GetAsync(uri);

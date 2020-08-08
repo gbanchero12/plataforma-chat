@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" />
+
+
+    <link href="@Url.Content("~/Shared/indexDialogos.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Shared", false)
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -15,12 +22,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+
                 </button>
-                @Html.ActionLink("Application name", "Index", "Login", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Login", "Index", "Login")</li>
+
+
+                    @if (Session["usuario"] == null)
+                    {
+                        @Html.ActionLink("Application name", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+
+                    <li>
+                        @Html.ActionLink("Tareas", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li>
+                        @if (Session["usuario"] != null)
+                        {
+                            @Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                    </li>
+
+                    <li>
+                        @if (Session["usuario"] != null)
+                        {
+                            @Html.ActionLink(Session["usuario"].ToString(), "Index", "DialogosView", null,
+                                new { @style = "color: blue" });
+
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

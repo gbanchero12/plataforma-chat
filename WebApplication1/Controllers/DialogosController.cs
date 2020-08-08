@@ -124,14 +124,12 @@ namespace WebApplication1.Controllers
         [HttpGet, Route("~/api/dialogos/buscar-dialogo")]
         public IHttpActionResult GetDialogos(int idDialogo)
         {
-            if (idDialogo == null)
+            if (idDialogo == 0)
                 return BadRequest();
-
-            Dialogo dialogo = null;
             try
             {
 
-                dialogo = db.Dialogos.Find(idDialogo);
+                Dialogo dialogo = db.Dialogos.Find(idDialogo);
                 return Ok(dialogo);
             }
             catch (Exception ex)

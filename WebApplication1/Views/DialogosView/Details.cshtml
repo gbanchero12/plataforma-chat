@@ -4,9 +4,7 @@
     ViewBag.Title = "Dialogo";
 }
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
@@ -19,7 +17,7 @@
                     <div class="btn-group pull-right">
 
                         <span class="glyphicon glyphicon-chevron-down"></span>
-                        </a>
+
                     </div>
                 </div>
                 <div class="panel-collapse in">
@@ -29,12 +27,12 @@
                     </div>
                     <div class="panel-footer">
                         <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Ingrese su mensaje ..." />
+                            <input id="btn-input" maxlength="1000" type="text" class="form-control input-sm" placeholder="Ingrese su mensaje aqui... (max: 1000 caracteres)" />
                             <span class="input-group-btn">
-                                <button class="btn btn-warning btn-sm" id="btn-chat">
+                                <button class="btn btn-success btn-sm" id="btn-chat" onclick="sendMessage()">
                                     Send
                                 </button>
-                                <button class="btn btn-success btn-sm" id="btn-chat">
+                                <button class="btn btn-warning btn-sm" id="btn-resolve">
                                     Resolver
                                 </button>
 
@@ -51,9 +49,77 @@
 
 <script type="text/javascript">
 
+    //Envia pericion a gateway para enviar whatsapp por chatapi
+    function sendMessage() {
+        var message = $("#btn-input").val();
+        console.log(message);
+        if (message === undefined ||
+            message === "" ||
+            message.length > 1000 ||
+            message.length === 0) {
+            console.error("mensaje no enviado");
+            return false;
+        }
+
+        var data = { mesnaje: message, token: "laabuelacoca", contacto: '@Model.Cliente.ChatId' };
+        console.log("Enviando whatsapp..." + JSON.stringify(data));
+        saveMessageInDataBase(); //borrar
+
+        $.ajax({
+            url: "http://herokuapp.chatapi.com/sendmessage?...",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (data) {
+
+                saveMessageInDataBase();
+            },
+            error: function (xhr) {
+                console.log(xhr);
+            }
+
+        });
+    }
+
+
+    function saveMessageInDataBase(data) {
+        var message = $("#btn-input").val();
+        var data = {
+            Texto: message,
+            FechaCreacion: new Date(),
+                Cliente: {
+                    ID: '@Model.Cliente.ID',
+                    BotActivo: false,
+                    ChatId: '@Model.Cliente.ChatId'
+                },
+                Usuario: {
+                    ID: '@Model.Usuario.ID',
+                    Nombre: '@Model.Usuario.Nombre'
+                },
+            OrigenEmisor: 0
+        };
+        console.log("Gradando en BD:");
+        console.log(JSON.stringify(data));
+        $.ajax({
+            @* http://gbanchero12-001-site1.gtempurl.com*@
+            url: "http://localhost:1177/api/dialogos/recibir-mensaje",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function(data) {
+                Update();
+            },
+        error: function (error) {
+            console.log("Error:");
+            console.log(error);
+        }
+    });
+    }
+
+
+
+    //Renderiza los mensajes guardados en base de datos
     function renderClient(data) {
-
-
         console.log(data);
         var ret = "";
         for (var i = 0; i < data.Mensajes.length; i++) {
@@ -74,14 +140,17 @@
         return ret;
     }
 
-    var interval = 5000;
+    var interval = 20000;
+    var redirect = 600000;
 
     setInterval(function () { Update() }, interval);
+    setInterval(function () { RedirectToTasks() }, redirect);
 
     function Update(usuario) {
           var dialogoId = '@Model.ID';
         //var usuario = 'Model.Usuario.Nombre';
         $.ajax({
+            @*http://gbanchero12-001-site1.gtempurl.com*@
             url: "http://localhost:1177/api/dialogos/buscar-dialogo?idDialogo=" + dialogoId,
                     success: function(data) {
                         console.log(data);
@@ -94,4 +163,12 @@
             }
         });
     }
+
+
+
+    function RedirectToTasks() {
+        window.location.replace("http://localhost:1177/DialogosView/Index");
+    }
 </script>
+
+

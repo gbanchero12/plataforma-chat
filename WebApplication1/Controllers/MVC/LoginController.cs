@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain;
+using Obligatorio2___WebApi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,10 @@ namespace WebApplication1.Controllers
 {
     public class LoginController : Controller
     {
+
+        private ChatPlatformContext db = new ChatPlatformContext();
+
+
         // GET: Login
         public ActionResult Index()
         {
@@ -28,24 +34,48 @@ namespace WebApplication1.Controllers
 
         // POST: Login/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Usuario usuario)
         {
-            try
-            {
-                
+           
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                try
+                {
+                    Usuario usu = db.Usuarios.Where(u => u.Nombre.Equals(usuario.Nombre)).FirstOrDefault();
+                    if (usu != null && usu.Password == usuario.Password)
+                    {
+                        Session["usuario"] = usu.Nombre;                       
+                        return RedirectToAction("Index", "DialogosView");
+
+                    }
+                    else
+                    {
+                        ViewBag.Error = "Usuario o contraseña incorrectos";
+                        return View(usuario);
+
+                    }
+
+                }
+                catch
+                {
+
+                    throw;
+                }
+            }
+            else
+            {
+                ViewBag.Error = "Verifique los datos ingresados e inténtelo nuevamente";
+                return View(usuario);
+
             }
         }
 
-        // GET: Login/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Login/CerrarSesion
+        public ActionResult CerrarSesion()
         {
-            return View();
+            Session["usuario"] = null;
+            return RedirectToAction("Create");
         }
 
         // POST: Login/Edit/5
@@ -84,6 +114,15 @@ namespace WebApplication1.Controllers
             {
                 return View();
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
