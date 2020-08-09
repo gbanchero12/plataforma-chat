@@ -61,12 +61,12 @@
             return false;
         }
 
-        var data = { mesnaje: message, token: "laabuelacoca", contacto: '@Model.Cliente.ChatId' };
+        var data = { message: message, token: "laabuelacoca", phone: '@Model.Cliente.ChatId' };
         console.log("Enviando whatsapp..." + JSON.stringify(data));
         saveMessageInDataBase(); //borrar
 
         $.ajax({
-            url: "http://herokuapp.chatapi.com/sendmessage?...",
+            url: "@Url.Encode(ViewBag.Url)" + "/sendText",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(data),
@@ -101,8 +101,8 @@
         console.log("Gradando en BD:");
         console.log(JSON.stringify(data));
         $.ajax({
-            @* http://gbanchero12-001-site1.gtempurl.com*@
-            url: "http://localhost:1177/api/dialogos/recibir-mensaje",
+            @* http://gbanchero12-001-site1.gtempurl.com || http://localhost:1177/api/dialogos/recibir-mensaje*@
+            url: "@Url.Encode(ViewBag.Url)" + "/api/dialogos/recibir-mensaje",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(data),

@@ -17,9 +17,13 @@ namespace WebApplication1.Controllers.MVC
 
         //local || urlApiPlataformaChat
         private string _url = ConfigurationManager.AppSettings["local"];
+        private string _api = ConfigurationManager.AppSettings["external"];
         // GET: DialogosView
         public ActionResult Index()
         {
+            if (Session["Usuario"] == null)
+                return RedirectToAction("Create","Login");
+
             List<Dialogo> dialogos = null;
             _ = new HttpClient();
             Uri uri = new Uri(_url + "/api/dialogos/buscar-dialogo-by-user"
@@ -42,12 +46,17 @@ namespace WebApplication1.Controllers.MVC
                 ViewBag.Error = tarea.Result.StatusCode;
             }
 
+            ViewBag.Url = _url;
+            ViewBag.Api = _api;
             return View(dialogos);
         }
 
         // GET: DialogosView/Details/5
         public ActionResult Details(int id)
         {
+            if (Session["Usuario"] == null)
+                { return RedirectToAction("Create", "Login"); }
+
             Dialogo buscado = db.Dialogos.Find(id);
             if (buscado == null) { RedirectToAction("Index"); }
             return View(buscado);
