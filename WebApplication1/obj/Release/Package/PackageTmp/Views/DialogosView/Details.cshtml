@@ -83,7 +83,7 @@
                 'Content-Type': 'application/json'
             }
         })
-
+            .then(res => console.log(res));
         saveMessageInDataBase();
 
     }
@@ -91,7 +91,7 @@
 
     function saveMessageInDataBase() {
         var message = $("#btn-input").val();
-        
+
         var data = {
             Texto: message,
             FechaCreacion: new Date(),

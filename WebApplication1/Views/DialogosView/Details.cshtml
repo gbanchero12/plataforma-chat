@@ -83,8 +83,8 @@
                 'Content-Type': 'application/json'
             }
         })
-            .then(res => console.log(res));
-        saveMessageInDataBase();
+            .then(res => { if (res.ok) saveMessageInDataBase(); });
+
 
     }
 

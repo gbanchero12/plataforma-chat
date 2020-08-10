@@ -16,23 +16,25 @@
             Contacto
         </th>
         <th>
-           
-        </th>    
+            Estado
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Cliente.ChatId)
-    </td>
-    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.ChatId)
+            </td>
 
-    <td>
-        @Html.ActionLink("Ir a resolver", "Details/" + item.ID)
-        
-    </td>
-</tr>
+
+            <td>
+                @if (!item.Resuelta)
+                {@Html.ActionLink("Ir a resolver", "Details/" + item.ID)}
+                else { <div>✓</div>  }
+
+            </td>
+        </tr>
     }
 
 </table>

@@ -40,6 +40,7 @@ namespace WebApplication1.Controllers.MVC
 
                 string json = tarea2.Result;
                 dialogos = JsonConvert.DeserializeObject<List<Dialogo>>(json);
+
             }
             else
             {
