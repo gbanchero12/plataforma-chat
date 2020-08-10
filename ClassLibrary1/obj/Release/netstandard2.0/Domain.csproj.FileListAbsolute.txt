@@ -7,12 +7,6 @@ C:\Users\User\Desktop\workspace\plataforma-bots\WebApplication1\ClassLibrary1\ob
 C:\Users\User\Desktop\workspace\plataforma-bots\WebApplication1\ClassLibrary1\obj\Release\netstandard2.0\Domain.dll
 C:\Users\User\Desktop\workspace\plataforma-bots\WebApplication1\ClassLibrary1\obj\Release\netstandard2.0\Domain.pdb
 C:\Users\User\Desktop\workspace\plataforma-bots\WebApplication1\ClassLibrary1\obj\Release\netstandard2.0\Domain.csprojAssemblyReference.cache
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.csprojAssemblyReference.cache
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.AssemblyInfo.cs
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.dll
-C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.pdb
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\Domain.deps.json
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\Domain.dll
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\Domain.pdb
@@ -22,4 +16,10 @@ C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netsta
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\System.Configuration.xml
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\bin\Release\netstandard2.0\System.Security.xml
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.csprojAssemblyReference.cache
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.AssemblyInfo.cs
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.csproj.CopyComplete
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.dll
+C:\Users\Guillermo\Source\Repos\plataforma-chat\ClassLibrary1\obj\Release\netstandard2.0\Domain.pdb

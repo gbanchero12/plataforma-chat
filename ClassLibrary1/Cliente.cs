@@ -13,7 +13,7 @@ namespace Domain
         public int ID { get; set; }
         public bool BotActivo { get; set; }
 
-        [MaxLength(10)]
+        [MaxLength(20)]
         public string ChatId { get; set; }
 
         public Cliente()

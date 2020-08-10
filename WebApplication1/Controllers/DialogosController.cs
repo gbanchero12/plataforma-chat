@@ -53,9 +53,13 @@ namespace WebApplication1.Controllers
 
                 }
                 else
-                {
-                    //  nuevo dialogo
+                {      //  nuevo dialogo
+                    
+                    // mejorar algoritmia:
+                    Usuario usu_a_asignar = db.Usuarios.Find(UsuarioLibre());
+
                     mensaje.FechaCreacion = DateTime.Now;
+                    mensaje.Usuario = usu_a_asignar;
                     db.Mensajes.Add(mensaje);
                     db.Entry(mensaje.Cliente).State = EntityState.Unchanged;
                     db.Entry(mensaje.Usuario).State = EntityState.Unchanged;
@@ -65,12 +69,14 @@ namespace WebApplication1.Controllers
                     List<Mensaje> list = new List<Mensaje>();
                     list.Add(mensaje);
 
+
+
                     Dialogo nuevo_dialogo = new Dialogo
                     {
                         Cliente = mensaje.Cliente,
                         Mensajes = list,
                         Resuelta = false,
-                        Usuario = mensaje.Usuario
+                        Usuario = usu_a_asignar
                     };
 
                     db.Entry(nuevo_dialogo.Cliente).State = EntityState.Unchanged;
@@ -136,6 +142,50 @@ namespace WebApplication1.Controllers
             {
                 return InternalServerError(ex);
             }
+        }
+
+        //se deberia de orquestar hacia Usuarios controller
+        public int UsuarioLibre()
+        {
+            List<PairUsu> pair = null;
+            PairUsu min = null;
+            try
+            {
+                List<Usuario> usuarios = db.Usuarios.ToList();
+
+                pair = db.Dialogos.GroupBy(x => x.Usuario)
+                                  .Select(usu => new PairUsu { UsuarioId = usu.Key.ID, CantidadDeConsultas = usu.Count() }).ToList();
+                min = pair.OrderBy(p => p.CantidadDeConsultas).FirstOrDefault();
+
+                usuarios.ForEach(usu =>
+                {
+                    if (!Contiene(usu.ID, pair))
+                    {
+                        min = new PairUsu() { UsuarioId = usu.ID };
+                    }
+                }
+                );
+
+
+            }
+            catch (Exception e)
+            {
+                throw (e);
+            }
+
+            return min.UsuarioId;
+        }
+
+        private bool Contiene(int id, List<PairUsu> pair)
+        {
+            foreach (PairUsu p in pair)
+            {
+                if (p.UsuarioId == id)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         protected override void Dispose(bool disposing)
         {

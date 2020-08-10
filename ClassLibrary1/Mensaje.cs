@@ -14,7 +14,7 @@ namespace Domain
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
-        [MaxLength(300)]
+        [MaxLength(1000)]
         public string Texto { get; set; }
 
         public virtual DateTime FechaCreacion { get; set; }

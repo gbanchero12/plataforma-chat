@@ -49,10 +49,18 @@
 
 <script type="text/javascript">
 
+
+    var interval = 10000;
+    var redirect = 600000;
+
+    setInterval(function () { Update() }, interval);
+    setInterval(function () { RedirectToTasks() }, redirect);
+
+
     //Envia pericion a gateway para enviar whatsapp por chatapi
     function sendMessage() {
         var message = $("#btn-input").val();
-        console.log(message);
+        //console.log(message);
         if (message === undefined ||
             message === "" ||
             message.length > 1000 ||
@@ -61,29 +69,29 @@
             return false;
         }
 
-        var data = { message: message, token: "laabuelacoca", phone: '@Model.Cliente.ChatId' };
-        console.log("Enviando whatsapp..." + JSON.stringify(data));
-        saveMessageInDataBase(); //borrar
+        var req = { message: message, token: "laabuelacoca", phone: '@Model.Cliente.ChatId' };
+        console.log("Enviando whatsapp..." + req);
 
-        $.ajax({
-            url: "@Url.Encode(ViewBag.Url)" + "/sendText",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(data),
-            success: function (data) {
 
-                saveMessageInDataBase();
-            },
-            error: function (xhr) {
-                console.log(xhr);
+
+        var urlApi = '@ViewBag.Api' + '/sendText';
+
+        fetch(urlApi, {
+            method: 'POST',
+            body: JSON.stringify(req),
+            headers: {
+                'Content-Type': 'application/json'
             }
+        })
+            .then(res => console.log(res));
+        saveMessageInDataBase();
 
-        });
     }
 
 
-    function saveMessageInDataBase(data) {
+    function saveMessageInDataBase() {
         var message = $("#btn-input").val();
+
         var data = {
             Texto: message,
             FechaCreacion: new Date(),
@@ -98,11 +106,11 @@
                 },
             OrigenEmisor: 0
         };
-        console.log("Gradando en BD:");
-        console.log(JSON.stringify(data));
+        //console.log("Gradando en BD:");
+        //console.log(JSON.stringify(data));
         $.ajax({
-            @* http://gbanchero12-001-site1.gtempurl.com || http://localhost:1177/api/dialogos/recibir-mensaje*@
-            url: "@Url.Encode(ViewBag.Url)" + "/api/dialogos/recibir-mensaje",
+
+            url: "@ViewBag.Url" + "/api/dialogos/recibir-mensaje",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(data),
@@ -113,14 +121,15 @@
             console.log("Error:");
             console.log(error);
         }
-    });
+        });
+        $("#btn-input").val("");
     }
 
 
 
     //Renderiza los mensajes guardados en base de datos
     function renderClient(data) {
-        console.log(data);
+        //console.log(data);
         var ret = "";
         for (var i = 0; i < data.Mensajes.length; i++) {
 
@@ -140,18 +149,13 @@
         return ret;
     }
 
-    var interval = 20000;
-    var redirect = 600000;
 
-    setInterval(function () { Update() }, interval);
-    setInterval(function () { RedirectToTasks() }, redirect);
 
     function Update(usuario) {
           var dialogoId = '@Model.ID';
         //var usuario = 'Model.Usuario.Nombre';
         $.ajax({
-            @*http://gbanchero12-001-site1.gtempurl.com*@
-            url: "http://localhost:1177/api/dialogos/buscar-dialogo?idDialogo=" + dialogoId,
+            url: "http://gbanchero12-001-site1.gtempurl.com/api/dialogos/buscar-dialogo?idDialogo=" + dialogoId,
                     success: function(data) {
                         console.log(data);
                         $("#chatList").html("");
@@ -167,7 +171,7 @@
 
 
     function RedirectToTasks() {
-        window.location.replace("http://localhost:1177/DialogosView/Index");
+        window.location.replace("http://gbanchero12-001-site1.gtempurl.com/DialogosView/Index");
     }
 </script>
 

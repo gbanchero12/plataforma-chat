@@ -19,6 +19,7 @@ using ResponseType = Microsoft.VisualStudio.Services.DelegatedAuthorization.Resp
 using HttpPutAttribute = System.Web.Http.HttpPutAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
 using System.Web.Http.Description;
+using System.Data.Entity.Migrations;
 
 namespace WebApplication1.Controllers
 {
@@ -35,9 +36,12 @@ namespace WebApplication1.Controllers
                 return BadRequest();
             }
 
-            Cliente ya_esta_guardado = db.Clientes.Where(cli => cli.ChatId == a_guardar.ChatId).SingleOrDefault();
+            Cliente ya_esta_guardado = db.Clientes.Where(cli => cli.ChatId == a_guardar.ChatId).FirstOrDefault();
             if (ya_esta_guardado != null)
             {
+                ya_esta_guardado.BotActivo = false;
+                db.Clientes.AddOrUpdate(ya_esta_guardado);
+                db.SaveChanges();
                 return Ok(ya_esta_guardado);
             }
 
@@ -84,6 +88,30 @@ namespace WebApplication1.Controllers
                 return InternalServerError(e);
             }
 
+            return Ok(cliente);
+        }
+
+        [System.Web.Http.HttpGet, System.Web.Http.Route("~/api/clientes/cliente-por-chat-id")]
+        public IHttpActionResult BuscarClientePorChatId(string chatId)
+        {
+            if(chatId == null)
+            {
+                return BadRequest();
+            }
+
+            Cliente cliente = new Cliente();
+            try
+            {
+                cliente = db.Clientes.Where(c => c.ChatId == chatId).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+
+            if (cliente == null)
+                return Ok("Cliente no encontrado");
+            
             return Ok(cliente);
         }
 

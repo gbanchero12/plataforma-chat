@@ -19,10 +19,23 @@ namespace WebApplication1.Controllers
             PairUsu min = null;
             try
             {
-                
+                List<Usuario> usuarios = db.Usuarios.ToList();
+
+
+
                 pair = db.Dialogos.GroupBy(x => x.Usuario)
                                   .Select(usu => new PairUsu { UsuarioId = usu.Key.ID, CantidadDeConsultas = usu.Count() }).ToList();
                 min = pair.OrderBy(p => p.CantidadDeConsultas).First();
+
+                usuarios.ForEach(usu =>
+                {
+                    if (!Contiene(usu.ID, pair))
+                    {
+                        min = new PairUsu() { UsuarioId = usu.ID };
+                    }
+                }
+                );
+
 
             }
             catch (Exception e)
@@ -31,6 +44,18 @@ namespace WebApplication1.Controllers
             }
 
             return Ok(min.UsuarioId);
+        }
+
+        private bool Contiene(int id, List<PairUsu> pair)
+        {
+            foreach(PairUsu p in pair)
+            {
+                if(p.UsuarioId == id)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         [HttpGet, Route("~/api/usuarios/login-usuario")]

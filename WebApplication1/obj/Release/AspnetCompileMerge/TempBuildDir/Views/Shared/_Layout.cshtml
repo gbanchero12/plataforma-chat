@@ -32,12 +32,16 @@
 
                     @if (Session["usuario"] == null)
                     {
-                        @Html.ActionLink("Application name", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("BotsUruguay.com - Live Chat Room", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                        
                     }
 
-                    <li>
-                        @Html.ActionLink("Tareas", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
+                    @if (Session["usuario"] != null)
+                    {
+                        <li>
+                            @Html.ActionLink("Conversaciones", "Index", "DialogosView", new { area = "" }, new { @class = "navbar-brand" })
+                        </li>
+                     }
                     <li>
                         @if (Session["usuario"] != null)
                         {

@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers.MVC
         private ChatPlatformContext db = new ChatPlatformContext();
 
         //local || urlApiPlataformaChat
-        private string _url = ConfigurationManager.AppSettings["local"];
+        private string _url = ConfigurationManager.AppSettings["urlApiPlataformaChat"];
         private string _api = ConfigurationManager.AppSettings["external"];
         // GET: DialogosView
         public ActionResult Index()
@@ -46,8 +46,8 @@ namespace WebApplication1.Controllers.MVC
                 ViewBag.Error = tarea.Result.StatusCode;
             }
 
-            ViewBag.Url = _url;
-            ViewBag.Api = _api;
+           
+            
             return View(dialogos);
         }
 
@@ -59,6 +59,8 @@ namespace WebApplication1.Controllers.MVC
 
             Dialogo buscado = db.Dialogos.Find(id);
             if (buscado == null) { RedirectToAction("Index"); }
+            ViewBag.Api = _api;
+            ViewBag.Url = _url;
             return View(buscado);
         }
 
