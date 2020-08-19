@@ -32,7 +32,7 @@
                                 <button class="btn btn-success btn-sm" id="btn-chat" onclick="sendMessage()">
                                     Send
                                 </button>
-                                <button class="btn btn-warning btn-sm" id="btn-resolve">
+                                <button class="btn btn-warning btn-sm" id="btn-resolve" onclick="resolve()">
                                     Resolver
                                 </button>
 
@@ -50,12 +50,27 @@
 <script type="text/javascript">
 
 
-    var interval = 10000;
+    var interval = 5000;
     var redirect = 600000;
 
     setInterval(function () { Update() }, interval);
     setInterval(function () { RedirectToTasks() }, redirect);
 
+    function resolve() {
+        $.ajax({
+
+            url: "@ViewBag.Url" + "/api/clientes/activar-chatbot-cliente?idCliente=" + '@Model.Cliente.ID' + "&idDialogo=" + '@Model.ID',
+            type: "PUT",
+            contentType: "application/json",
+            success: function () {
+                window.location.replace("@ViewBag.Url");
+            },
+            error: function (error) {
+
+                console.log(error);
+            }
+        });
+    }
 
     //Envia pericion a gateway para enviar whatsapp por chatapi
     function sendMessage() {
@@ -74,7 +89,7 @@
 
 
 
-        var urlApi = '@ViewBag.Api' + '/sendText';
+        var urlApi = '@System.Web.Configuration.WebConfigurationManager.AppSettings["external"]' + '/sendText';
 
         fetch(urlApi, {
             method: 'POST',
@@ -83,8 +98,8 @@
                 'Content-Type': 'application/json'
             }
         })
-            .then(res => console.log(res));
-        saveMessageInDataBase();
+            .then(res => { if (res.ok) saveMessageInDataBase(); });
+
 
     }
 
@@ -135,12 +150,12 @@
 
             if (data.Mensajes[i].OrigenEmisor === 0) {
                 ret += '<li class="left clearfix"> <span class="chat-img pull-left"><img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />'
-                    +'</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>'
+                    + '</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span> ' + data.Mensajes[i].FechaCreacion + '</small>'
                     +'<strong class="pull-left primary-font"> ' + data.Usuario.Nombre + '</strong> </div> <p>' + data.Mensajes[i].Texto
                     +'</p></div></li>';
             } else {
                 ret += '<li class="right clearfix"> <span class="chat-img pull-right"> <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />'
-                    +'</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span></small>'
+                    + '</span><div class="chat-body clearfix"> <div class="header"> <small class=" text-muted"><span class="glyphicon glyphicon-time"></span> ' + data.Mensajes[i].FechaCreacion + '</small>'
                     +'<strong class="pull-right primary-front">' + data.Cliente.ChatId +'</strong> </div> <p>' + data.Mensajes[i].Texto
                     +'</p></div></li>';
             }

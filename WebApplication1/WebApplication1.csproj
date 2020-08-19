@@ -214,6 +214,7 @@
     <Compile Include="Controllers\DialogosController.cs" />
     <Compile Include="Controllers\MVC\DialogosViewController.cs" />
     <Compile Include="Controllers\MVC\LoginController.cs" />
+    <Compile Include="Controllers\MVC\ReportesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -272,6 +273,7 @@
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\DialogosView\css\" />
     <Folder Include="Views\Dialogos\" />
+    <Folder Include="Views\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

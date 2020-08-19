@@ -151,26 +151,25 @@ namespace WebApplication1.Controllers
         // PUT: api/Clientes/
 
         [ResponseType(typeof(Cliente)), HttpPut, Route("~/api/clientes/activar-chatbot-cliente")]
-        public IHttpActionResult ActvarChatbotCliente(Cliente a_activar)
+        public IHttpActionResult ActvarChatbotCliente(int idCliente, int idDialogo)
         {
-            if (a_activar == null)
-            {
-                return BadRequest();
-            }
-
-            if (a_activar.BotActivo)
-            {
-                return Ok(a_activar);
-            }
 
             //BUSCO EL CLIENTE ORIGINAL
-            Cliente original = db.Clientes.Find(a_activar.ID);
+            Cliente original = db.Clientes.Find(idCliente);
             if (original == null) return NotFound();
+
+            Dialogo dialogo = db.Dialogos.Find(idDialogo);
+            if (dialogo == null) return NotFound();
+
+            if (dialogo.Cliente.ID != original.ID)
+                return BadRequest();
 
             try
             {
                 original.BotActivo = true;
-
+                dialogo.Resuelta = true;
+                db.Dialogos.AddOrUpdate(dialogo);
+                db.Clientes.AddOrUpdate(original);
                 db.SaveChanges();
 
                 return Ok(original);

@@ -17,6 +17,7 @@ namespace Domain
         [MaxLength(1000)]
         public string Texto { get; set; }
 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "0:dd/MM/yy H:mm")]
         public virtual DateTime FechaCreacion { get; set; }
 
         public Cliente Cliente { get; set; }
