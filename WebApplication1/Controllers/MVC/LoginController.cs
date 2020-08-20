@@ -45,7 +45,12 @@ namespace WebApplication1.Controllers
                     Usuario usu = db.Usuarios.Where(u => u.Nombre.Equals(usuario.Nombre)).FirstOrDefault();
                     if (usu != null && usu.Password == usuario.Password)
                     {
-                        Session["usuario"] = usu.Nombre;                       
+                        Session["usuario"] = usu.Nombre;
+                        if (usu.Administrador)
+                            Session["admin"] = "esAdmin";
+                        else
+                            Session["admin"] = null;
+
                         return RedirectToAction("Index", "DialogosView");
 
                     }

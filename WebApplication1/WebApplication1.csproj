@@ -267,13 +267,16 @@
     <Content Include="Views\Login\Create.cshtml" />
     <Content Include="Views\DialogosView\Details.cshtml" />
     <Content Include="Views\DialogosView\Index.cshtml" />
+    <Content Include="Views\Reportes\Index.cshtml" />
+    <Content Include="Views\Reportes\Dialogos.cshtml" />
+    <Content Include="Views\Reportes\Usuarios.cshtml" />
+    <Content Include="Views\Reportes\UsuarioHandler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\DialogosView\css\" />
     <Folder Include="Views\Dialogos\" />
-    <Folder Include="Views\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AYg3H29rFySBGj4d1XEK6h3JFqtpEwuvXiOcrTwJ9i9AB7rlrZbHR917IkEj8am+sbdqI/k5iW7bnWv4hxJnLA==",
+  "dgSpecHash": "mxsWFDb09SRhluprlNmBMfLURgDD7T27j9HdqhopwUrGMOHxorNbCkGc0TrUZN3J8zaxqqkEm8xONT8JQqCX+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guillermo\\source\\repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Guillermo\\Source\\Repos\\plataforma-chat\\ClassLibrary1\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guillermo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Guillermo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -1,0 +1,70 @@
+﻿@model Domain.UsuarioDialogo
+@{
+    ViewBag.Title = "Administrador de conversaciónes:";
+}
+
+<h2>Administrador de conversaciónes:</h2>
+
+@using (Html.BeginForm())
+{
+
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    foreach (var item in Model.Usuarios)
+    {
+        listItems.Add(new SelectListItem
+        {
+            Text = item.Nombre,
+            Value = item.ID.ToString()
+        });
+    }
+
+
+
+
+    List<SelectListItem> listItemsDialogos = new List<SelectListItem>();
+    foreach (var item in Model.Dialogos)
+    {
+
+        listItemsDialogos.Add(new SelectListItem
+        {
+            Text = item.Cliente.ChatId,
+            Value = item.Cliente.ID.ToString()
+        });
+
+    }
+
+
+
+    <div class="col-md-12">
+        <h5>Seleccione el usuario que se encargará de la conversación</h5>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Usuario:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.DropDownListFor(model => model.Usuarios, listItems, "Usuarios", new { id = "idUsuario", Name = "idUsuario", required="required" })
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h5>Listado de clientes con conversación por resolver</h5>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Cliente:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.ListBoxFor(model => model.Dialogos, listItemsDialogos, new { id = "idCliente", Name = "idCliente", required = "required" })
+
+        </div>
+    </div>
+
+    <br />
+    @ViewBag.Mensaje
+    <br />
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="ASIGNAR" class="btn btn-default" />
+        </div>
+    </div>
+
+}

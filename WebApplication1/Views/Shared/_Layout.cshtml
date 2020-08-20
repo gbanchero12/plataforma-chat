@@ -33,7 +33,7 @@
                     @if (Session["usuario"] == null)
                     {
                         @Html.ActionLink("BotsUruguay.com - Live Chat Room", "Create", "Login", new { area = "" }, new { @class = "navbar-brand" })
-                        
+
                     }
 
                     @if (Session["usuario"] != null)
@@ -41,20 +41,29 @@
                         <li>
                             @Html.ActionLink("Conversaciones", "Index", "DialogosView", new { area = "" }, new { @class = "navbar-brand" })
                         </li>
-                     }
+                    }
+
+
                     <li>
                         @if (Session["usuario"] != null)
                         {
-                            @Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink(Session["usuario"].ToString(), "Index", "DialogosView", null,
+                                new { @style = "color: red" });
+
+                        }
+                    </li>
+                    <li>
+                        @if (Session["admin"] != null)
+                        {
+                            @Html.ActionLink("Panel Administrador", "Index", "Reportes", new { area = "" }, new { @class = "navbar-brand" })
+
                         }
                     </li>
 
                     <li>
                         @if (Session["usuario"] != null)
                         {
-                            @Html.ActionLink(Session["usuario"].ToString(), "Index", "DialogosView", null,
-                                new { @style = "color: blue" });
-
+                            @Html.ActionLink("Cerrar Sesión", "CerrarSesion", "Login", new { area = "" }, new { @class = "navbar-brand flex-end" })
                         }
                     </li>
                 </ul>
@@ -65,7 +74,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - BotsUruguay.com</p>
+         
         </footer>
     </div>
 
