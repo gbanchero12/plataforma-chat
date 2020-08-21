@@ -1,8 +1,12 @@
 ﻿using Domain;
+using Newtonsoft.Json;
 using Obligatorio2___WebApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,7 +15,12 @@ namespace WebApplication1.Controllers.MVC
     public class ReportesController : Controller
     {
         private ChatPlatformContext db = new ChatPlatformContext();
-        // GET: Reportes
+
+        //local || urlApiPlataformaChat
+        private string _url = ConfigurationManager.AppSettings["urlApiPlataformaChat"];
+        private string _api = ConfigurationManager.AppSettings["external"];
+
+
         public ActionResult Index(string msj = "")
         {
             ViewBag.Mensaje = msj;
@@ -27,7 +36,8 @@ namespace WebApplication1.Controllers.MVC
             List<Dialogo> dialogos = db.Dialogos.Where(m => m.Cliente != null && m.Usuario != null).ToList();
             if(dialogos == null)
             {
-                return RedirectToAction("Index", "No hay mensajes para mostrar");
+                //, "No hay mensajes para mostrar"
+                return RedirectToAction("Index");
             }
             
             return View(dialogos);
@@ -42,7 +52,8 @@ namespace WebApplication1.Controllers.MVC
             List<Usuario> usuarios = db.Usuarios.Select(u => u).ToList();
             if (usuarios == null)
             {
-                return RedirectToAction("Index", "No hay usuarios para mostrar");
+                //, "No hay usuarios para mostrar"
+                return RedirectToAction("Index");
             }
             return View(usuarios);
         }
@@ -61,20 +72,42 @@ namespace WebApplication1.Controllers.MVC
 
             if (ud.Usuarios == null || ud.Dialogos == null)
             {
-                return RedirectToAction("Index", "No hay conversaciones para administrar");
+                //, "No hay conversaciones para administrar"
+                return RedirectToAction("Index");
             }
             return View(ud);
         }
 
 
         [HttpPost]
-        public ActionResult UsuarioHandler(string idUsuario, string idCliente)
+        public ActionResult UsuarioHandler(int idUsuario, int idCliente)
         {
             if (Session["admin"] == null)
                 return RedirectToAction("Create", "Login");
 
-            ViewBag.Mensaje = "Se asigno la conversación al usuario seleccionado";
-            return View();
+
+            Dialogo dialogo = null;
+            _ = new HttpClient();
+            Uri uri = new Uri(_url + "/api/dialogos/cambiar-usuario?idUsuario="+idUsuario+"&idCliente="+idCliente);
+            HttpClient cliente = new HttpClient();
+            var param = new { idUsuario, idCliente };
+            Task<HttpResponseMessage> tarea = cliente.PostAsJsonAsync(uri, param);
+            tarea.Wait();
+
+            if (tarea.Result.IsSuccessStatusCode)
+            {
+                Task<string> tarea2 = tarea.Result.Content.ReadAsStringAsync();
+                tarea2.Wait();
+
+                string json = tarea2.Result;
+                dialogo = JsonConvert.DeserializeObject<Dialogo>(json);
+
+            }
+            else
+            {
+                ViewBag.Error = tarea.Result.StatusCode;
+            }
+            return RedirectToAction("Index");
         }
 
 

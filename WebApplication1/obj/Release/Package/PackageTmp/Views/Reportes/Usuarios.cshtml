@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Domain.Usuario>
+
+
+@{
+    ViewBag.Title = "Listado de Usuarios";
+}
+
+<h2>Usuarios</h2>
+
+<table class="table">
+    <tr>
+
+        
+        <th>
+            Nombre
+        </th>
+        <th>
+            Administrador
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Administrador)
+    </td>
+
+</tr>
+    }
+
+</table>

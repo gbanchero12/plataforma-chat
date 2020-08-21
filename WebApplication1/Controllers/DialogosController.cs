@@ -144,6 +144,38 @@ namespace WebApplication1.Controllers
             }
         }
 
+        [HttpPost, Route("~/api/dialogos/cambiar-usuario")]
+        public IHttpActionResult GetDialogos(int idUsuario, int idCliente)
+        {
+            if (idCliente == 0 || idUsuario == 0)
+                return BadRequest();
+
+            try
+            {
+
+                Dialogo dialogo = db.Dialogos.Where(d => d.Cliente.ID == idCliente && !d.Resuelta)
+                    .FirstOrDefault();
+
+                Usuario a_asignar = db.Usuarios.Find(idUsuario);
+                
+                if(a_asignar != null && dialogo != null)
+                {
+                    //dialogo.Mensajes.ForEach(m => m.Usuario = a_asignar);
+
+                    dialogo.Usuario = a_asignar;
+                    db.SaveChanges();
+                    return Ok(dialogo);
+                }
+
+                return BadRequest();
+
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
         //se deberia de orquestar hacia Usuarios controller
         public int UsuarioLibre()
         {

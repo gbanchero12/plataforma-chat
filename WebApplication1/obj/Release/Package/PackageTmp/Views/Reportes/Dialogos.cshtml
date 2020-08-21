@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Domain.Dialogo>
+
+
+@{
+    ViewBag.Title = "Listado de Conversaciones";
+}
+
+<h2>Conversaciones</h2>
+
+<table class="table">
+    <tr>
+       
+        <th>
+            Cliente
+        </th>
+        <th>
+            Usuario
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.Cliente.ChatId)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+    </td>
+
+    
+
+
+</tr>
+    }
+
+</table>

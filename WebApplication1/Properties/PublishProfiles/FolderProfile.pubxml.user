@@ -43,10 +43,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/26/2019 22:08:32</publishTime>
     </File>
     <File Include="bin/Domain.dll">
-      <publishTime>08/19/2020 11:42:21</publishTime>
+      <publishTime>08/21/2020 12:43:01</publishTime>
     </File>
     <File Include="bin/Domain.pdb">
-      <publishTime>08/19/2020 11:42:21</publishTime>
+      <publishTime>08/21/2020 12:43:01</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/02/2020 18:52:21</publishTime>
@@ -178,10 +178,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/26/2019 22:08:30</publishTime>
     </File>
     <File Include="bin/Plataforma-Chat.dll">
-      <publishTime>08/19/2020 11:42:21</publishTime>
+      <publishTime>08/21/2020 12:43:02</publishTime>
     </File>
     <File Include="bin/Plataforma-Chat.pdb">
-      <publishTime>08/19/2020 11:42:21</publishTime>
+      <publishTime>08/21/2020 12:43:02</publishTime>
     </File>
     <File Include="bin/pt-BR/Microsoft.TeamFoundation.Common.resources.dll">
       <publishTime>08/26/2019 22:08:28</publishTime>
@@ -796,7 +796,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/02/2020 18:52:16</publishTime>
     </File>
     <File Include="Views/DialogosView/Details.cshtml">
-      <publishTime>08/19/2020 09:54:16</publishTime>
+      <publishTime>08/21/2020 12:42:22</publishTime>
     </File>
     <File Include="Views/DialogosView/Index.cshtml">
       <publishTime>08/10/2020 02:10:03</publishTime>
@@ -808,7 +808,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/02/2020 18:52:16</publishTime>
     </File>
     <File Include="Views/Login/Create.cshtml">
-      <publishTime>08/10/2020 14:42:39</publishTime>
+      <publishTime>08/21/2020 11:56:57</publishTime>
+    </File>
+    <File Include="Views/Reportes/Dialogos.cshtml">
+      <publishTime>08/20/2020 15:42:54</publishTime>
+    </File>
+    <File Include="Views/Reportes/Index.cshtml">
+      <publishTime>08/21/2020 12:14:05</publishTime>
+    </File>
+    <File Include="Views/Reportes/UsuarioHandler.cshtml">
+      <publishTime>08/20/2020 18:00:05</publishTime>
+    </File>
+    <File Include="Views/Reportes/Usuarios.cshtml">
+      <publishTime>08/20/2020 15:54:25</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/02/2020 18:52:16</publishTime>
@@ -817,7 +829,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2020 10:40:29</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/10/2020 02:11:11</publishTime>
+      <publishTime>08/20/2020 17:49:16</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/02/2020 18:52:16</publishTime>
@@ -826,7 +838,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/02/2020 18:52:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/19/2020 11:43:07</publishTime>
+      <publishTime>08/21/2020 12:43:32</publishTime>
     </File>
   </ItemGroup>
 </Project>
